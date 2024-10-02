@@ -1,7 +1,7 @@
 import re
 
 
-def CutOneLineTokens(line):
+def cut_one_line_tokens(line):
     output = []
     op = re.compile(r"[=+>*]")  # Operator regex formula
     key = re.compile(r"(if|else|int|float)\b")  # Keyword regex formula
@@ -84,6 +84,6 @@ if __name__ == "__main__":
 
     for x in inputs:
         print("Test Input String: " + x)
-        out = CutOneLineTokens(x)
+        out = cut_one_line_tokens(x)
         print("Output <Type,Token> list: ", end="")
         print(out)

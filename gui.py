@@ -33,14 +33,14 @@ def next_line():
 
 
 root = tk.Tk()
-root.title("Lexer")
+root.title("Lexical Analyzer for TinyPie")
 root.bind("<Escape>", lambda e: root.quit())
 
 # Code frame
 code_frame = tk.Frame(root)
 code_frame.pack(side="left")  # Set side to "left"
 
-code_label = tk.Label(code_frame, text="Enter Code Here:")
+code_label = tk.Label(code_frame, text="Source Code Here:")
 code_label.pack()
 
 code_text = tk.Text(code_frame, height=10, width=50)
@@ -49,7 +49,7 @@ code_text.pack()
 run_button = tk.Button(code_frame, text="Next line", command=next_line)
 run_button.pack(side="left")
 
-line_number_label = tk.Label(code_frame, text=f"Line number:")
+line_number_label = tk.Label(code_frame, text=f"Line number")
 line_number_label.pack(side="right")
 
 line_number_text = tk.Text(code_frame, height=1, width=5)

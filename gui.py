@@ -11,7 +11,7 @@ def next_line():
     output_text.focus_set()
     output_text.config(state=tk.NORMAL)
 
-    if line_number > len(code_lines):
+    if line_number == len(code_lines) - 1:
         # If we have reached the end of the code lines, reset the line number
         line_number = 0
         code_lines = []
@@ -22,7 +22,7 @@ def next_line():
         code = code_text.get("1.0", tk.END)
         code_lines = code.split("\n")
 
-    output_text.insert(tk.END, f"{code_lines[line_number]}\n")
+    output_text.insert(tk.END, f"{lex.cut_one_line_tokens(code_lines[line_number])}\n")
     output_text.config(state=tk.DISABLED)
 
     line_number += 1
